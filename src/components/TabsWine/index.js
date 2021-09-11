@@ -1,7 +1,7 @@
 import React from 'react'
 import cl from './TabsWine.module.scss'
 
-const TabsWine = ({ items, tabsActive, getActiveTabs }) => {
+export default React.memo(function TabsWine({ items, tabsActive, getActiveTabs }) {
   return (
     <ul className={cl.tabs}>
       {items &&
@@ -14,6 +14,4 @@ const TabsWine = ({ items, tabsActive, getActiveTabs }) => {
         ))}
     </ul>
   )
-}
-
-export default TabsWine
+})

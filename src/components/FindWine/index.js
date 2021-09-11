@@ -8,18 +8,14 @@ const FindWine = () => {
   const [search, setSearch] = useState('')
   const [tabsActive, setTabsActive] = useState(0)
 
-  const getActiveTabs = index => {
+  const getActiveTabs = React.useCallback(index => {
     setTabsActive(index)
-  }
+  }, [])
 
   return (
     <div>
       <WineSearch search={search} setInput={e => setSearch(e.target.value)} />
-      <TabsWine
-        items={categoryWine}
-        tabsActive={tabsActive}
-        getActiveTabs={e => getActiveTabs(e)}
-      />
+      <TabsWine items={categoryWine} tabsActive={tabsActive} getActiveTabs={getActiveTabs} />
     </div>
   )
 }
