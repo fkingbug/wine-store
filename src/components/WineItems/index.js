@@ -1,15 +1,9 @@
-import React from 'react'
+import React from "react"
 
-import WinItem from '../UI/WinItem'
-import cl from './WineItems.module.scss'
-const WineItems = () => {
-  return (
-    <div className={cl.wineItems}>
-      {[1, 2, 3, 4, 5, 6].map(items => (
-        <WinItem />
-      ))}
-    </div>
-  )
+import WinItem from "../UI/WinItem"
+import cl from "./WineItems.module.scss"
+const WineItems = ({ wines }) => {
+  return <div className={cl.wineItems}>{wines && wines.map(item => <WinItem {...item} />)}</div>
 }
 
 export default WineItems

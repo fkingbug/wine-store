@@ -2,13 +2,14 @@ import React from 'react'
 import cl from './TabsWine.module.scss'
 
 export default React.memo(function TabsWine({ items, tabsActive, getActiveTabs }) {
+  console.log('ререндер')
   return (
     <ul className={cl.tabs}>
       {items &&
         items.map((item, index) => (
           <li
-            onClick={() => getActiveTabs(index)}
-            className={`${cl.item} ${tabsActive === index ? cl.active : ''}`}>
+            onClick={() => getActiveTabs(item)}
+            className={`${cl.item} ${tabsActive === item ? cl.active : ''}`}>
             {item}
           </li>
         ))}
