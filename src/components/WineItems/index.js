@@ -1,9 +1,25 @@
-import React from "react"
+import React, { useEffect } from "react";
 
-import WinItem from "../UI/WinItem"
-import cl from "./WineItems.module.scss"
-const WineItems = ({ wines }) => {
-  return <div className={cl.wineItems}>{wines && wines.map(item => <WinItem {...item} />)}</div>
-}
+import { useDispatch, useSelector } from "react-redux";
+import { fetchWines } from "../../store/action/wine";
 
-export default WineItems
+import WinItem from "../UI/WinItem";
+import cl from "./WineItems.module.scss";
+
+const WineItems = () => {
+  const dispatch = useDispatch();
+  const wines = useSelector((state) => state.wine.items);
+  const { category, searchWine } = useSelector((state) => state.filter);
+
+  useEffect(() => {
+    dispatch(fetchWines(category, searchWine));
+  }, [category, searchWine, dispatch]);
+
+  return (
+    <div className={cl.wineItems}>
+      {wines && wines.map((item, index) => <WinItem key={`${item}_${index}`} {...item} />)}
+    </div>
+  );
+};
+
+export default WineItems;
