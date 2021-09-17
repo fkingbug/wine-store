@@ -2,7 +2,7 @@ import React from "react"
 
 import cl from "./WinItem.module.scss"
 
-const WinItem = ({ color, name, title, price, url }) => {
+const WinItem = ({ name, title, price, url }) => {
   return (
     <div className={cl.item}>
       <div className={cl.wineImg}>
