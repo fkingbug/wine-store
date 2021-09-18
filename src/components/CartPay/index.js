@@ -1,18 +1,19 @@
 import React from "react"
+
 import CartButton from "../UI/CartButton"
 
 import cl from "./CartPay.module.scss"
-const CartPay = () => {
+const CartPay = ({ totalPrice }) => {
   return (
     <div className={cl.cartPay}>
       <ul>
         <li>
           <p>Subtotal</p>
-          <p>$96</p>
+          <p>${totalPrice}</p>
         </li>
         <li>
           <p>Tax</p>
-          <p>$2</p>
+          <p>${totalPrice ? 2 : 0}</p>
         </li>
         <li>
           <p>Discount</p>
@@ -22,7 +23,7 @@ const CartPay = () => {
       <div className={cl.payload}>
         <div className={cl.total}>
           <p>Total</p>
-          <p>$98</p>
+          <p>${totalPrice ? totalPrice + 2 : 0}</p>
         </div>
         <CartButton title={"Charge customer"} st />
       </div>

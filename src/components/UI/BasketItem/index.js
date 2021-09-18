@@ -1,7 +1,7 @@
 import React from "react"
 
 import cl from "./BasketItem.module.scss"
-const BasketItem = ({ name, title, price, url }) => {
+const BasketItem = ({ name, title, price, url, length }) => {
   return (
     <div className={cl.item}>
       <div className={cl.wineImg}>
@@ -14,7 +14,7 @@ const BasketItem = ({ name, title, price, url }) => {
       </div>
       <div className={cl.plusAndMin}>
         <p className={cl.math}>+</p>
-        <p>2</p>
+        <p>{length}</p>
         <p className={cl.math}>-</p>
       </div>
     </div>

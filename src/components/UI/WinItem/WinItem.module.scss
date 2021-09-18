@@ -7,7 +7,12 @@
   border-radius: 30px;
   -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+  cursor: pointer;
 
+  &:hover {
+    -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  }
   .wineImg {
     position: relative;
     height: 66px;
