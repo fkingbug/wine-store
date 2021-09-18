@@ -2,7 +2,7 @@ const initialState = {
   items: [],
 }
 
-const SET_WINE = 'SET_WINE'
+const SET_WINE = "SET_WINE"
 
 const wines = (state = initialState, action) => {
   switch (action.type) {

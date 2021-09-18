@@ -15,6 +15,7 @@ const BasketItems = () => {
   return (
     <div className={cl.basketItems}>
       <BasketItem {...items} />
+      <BasketItem {...items} />
     </div>
   )
 }

@@ -2,9 +2,11 @@ import React from "react"
 
 import cl from "./WinItem.module.scss"
 
-const WinItem = ({ name, title, price, url }) => {
+const WinItem = ({ cod, color, name, title, price, url, addWine }) => {
+  const handleClick = () => addWine({ cod, color, name, title, price, url })
+
   return (
-    <div className={cl.item}>
+    <div className={cl.item} onClick={handleClick}>
       <div className={cl.wineImg}>
         <img src={url} alt="" />
       </div>

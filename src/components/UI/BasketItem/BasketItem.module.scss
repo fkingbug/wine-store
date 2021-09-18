@@ -1,9 +1,74 @@
 .item {
-  height: 130px;
+  height: 100px;
   width: 100%;
+  margin-bottom: 25px;
   display: flex;
   flex-direction: row;
-  img {
-    height: 90px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  .wineImg {
+    position: relative;
+    height: 100%;
+    background: red;
+    width: 100px;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    margin-right: 20px;
+    -webkit-box-shadow: 3px 3px 3px rgba(197, 153, 153, 1);
+    box-shadow: 3px 3px 3px rgba(197, 153, 153, 1);
+    img {
+      position: absolute;
+      height: 100px;
+      height: 100px;
+      bottom: 15px;
+      right: 35px;
+    }
+  }
+  .desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 66px;
+    width: 170px;
+    .name {
+      font-weight: 700;
+    }
+    .title {
+      font-size: 10px;
+      font-weight: 500;
+      color: #a09292;
+    }
+    .price {
+      font-weight: 700;
+      font-size: 14px;
+      font-weight: 700;
+      color: #ee6e7a;
+    }
+  }
+  .plusAndMin {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+
+    p {
+      text-align: center;
+      width: 20px;
+      line-height: 1.3;
+      border-radius: 15px;
+      border-radius: 6px;
+      color: black;
+    }
+  }
+}
+.math {
+  background: #eaf4fe;
+  cursor: pointer;
+  color: black;
+  &:hove {
+    background: #b1b6bb;
   }
 }
