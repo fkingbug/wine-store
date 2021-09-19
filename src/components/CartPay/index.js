@@ -3,7 +3,7 @@ import React from "react"
 import CartButton from "../UI/CartButton"
 
 import cl from "./CartPay.module.scss"
-const CartPay = ({ totalPrice }) => {
+const CartPay = ({ totalPrice, clearWineCart }) => {
   return (
     <div className={cl.cartPay}>
       <ul>
@@ -25,7 +25,7 @@ const CartPay = ({ totalPrice }) => {
           <p>Total</p>
           <p>${totalPrice ? totalPrice + 2 : 0}</p>
         </div>
-        <CartButton title={"Charge customer"} st />
+        <CartButton clearWineCart={clearWineCart} title={"Charge customer"} st />
       </div>
     </div>
   )

@@ -1,7 +1,13 @@
 import React from "react"
 
 import cl from "./BasketItem.module.scss"
-const BasketItem = ({ name, title, price, url, length }) => {
+const BasketItem = ({ cod, name, title, price, url, length, plusWineItem, minusWineItem }) => {
+  const handlePlus = () => {
+    plusWineItem(cod)
+  }
+  const handleMinus = () => {
+    minusWineItem(cod)
+  }
   return (
     <div className={cl.item}>
       <div className={cl.wineImg}>
@@ -13,9 +19,13 @@ const BasketItem = ({ name, title, price, url, length }) => {
         <p className={cl.price}>${price}</p>
       </div>
       <div className={cl.plusAndMin}>
-        <p className={cl.math}>+</p>
+        <p onClick={handlePlus} className={cl.math}>
+          +
+        </p>
         <p>{length}</p>
-        <p className={cl.math}>-</p>
+        <p onClick={handleMinus} className={cl.math}>
+          -
+        </p>
       </div>
     </div>
   )

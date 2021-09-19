@@ -1,6 +1,6 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { clearWineCart } from "../../store/action/cart"
+import { clearWineCart, plusCartItem, minusCartItem } from "../../store/action/cart"
 
 import BasketHed from "../BasketHed"
 import BasketItems from "../BasketItems"
@@ -12,11 +12,13 @@ const Basket = () => {
   const { totalPrice, items } = useSelector((state) => state.cart)
 
   const clearCartItems = () => dispatch(clearWineCart())
+  const plusWineItem = (cod) => dispatch(plusCartItem(cod))
+  const minusWineItem = (cod) => dispatch(minusCartItem(cod))
   return (
     <div className={cl.basket}>
       <BasketHed clearWineCart={clearCartItems} />
-      <BasketItems items={items} />
-      <CartPay totalPrice={totalPrice} />
+      <BasketItems items={items} plusWineItem={plusWineItem} minusWineItem={minusWineItem} />
+      <CartPay totalPrice={totalPrice} clearWineCart={clearCartItems} />
     </div>
   )
 }
